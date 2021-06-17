@@ -18,3 +18,13 @@ camera.position.setZ(30);
 renderer.render(scene, camera);
 
 //GEOMETRY
+//Added a 3d shape to the screen
+const geometry = new THREE.TorusGeometry(10,3,16,100);
+
+//Material
+//The wrapping paper for an object 
+const material = new THREE.MeshBasicMaterial({color: 0xFF6347, wireframe: true});
+
+//Mesh
+//Geometry + Material
+const torus = new THREE.Mesh(geometry, material);
