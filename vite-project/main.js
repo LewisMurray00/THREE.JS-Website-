@@ -19,3 +19,15 @@ renderer.render(scene, camera);
 //The {x,y,z} points that makeup a shape
 const geometry = new THREE.TorusGeometry(10,3,16,100);
 
+//MATERIAL
+//The wrapping paper for an object 
+const material = new THREE.MeshBasicMaterial({color: 0xff6347, wireframe: true});
+
+//MESH
+//Added geometry and material together
+const torus = new THREE.Mesh(geometry, material);
+
+scene.add(torus);
+
+//ANIMATION LOOP
+
