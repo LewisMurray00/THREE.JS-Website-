@@ -28,3 +28,21 @@ const material = new THREE.MeshBasicMaterial({color: 0xFF6347, wireframe: true})
 //Mesh
 //Geometry + Material
 const torus = new THREE.Mesh(geometry, material);
+
+//Adding it to the screen
+scene.add(torus);
+
+//To see it you need to recall the render method
+//ANIMATION LOOP
+function animate(){
+    requestAnimationFrame(animate);
+
+    //Adding the ability to move it:
+    torus.rotation.x += 0.01;
+    torus.rotation.y += 0.005;
+    torus.rotation.z += 0.01;
+    
+    renderer.render(scene,camera);
+}
+
+animate()
