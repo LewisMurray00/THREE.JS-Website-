@@ -1,4 +1,5 @@
-import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
+//import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+
 const scene = new THREE.Scene();
 
 //Perspective camera is what we would see through our eyes
@@ -35,11 +36,15 @@ scene.add(torus);
 
 //LIGHTING
 //Add some lighting
-const pointLight = new THREE.PointLight(0xffffff)
-pointLight.position.set(5,5,5)
+const pointLight = new THREE.PointLight(0xffffff);
+pointLight.position.set(5,5,5);
 
 const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(pointLight, ambientLight);
+
+//ORBIT CONTROLS
+//const controls = new OrbitControls(camera, renderer.domElement);
+
 
 
 //To see it you need to recall the render method
@@ -52,8 +57,10 @@ function animate(){
     torus.rotation.y += 0.005;
     torus.rotation.z += 0.01;
 
+    //controls.update();
+
     renderer.render(scene,camera);
 }
 
-animate()
+animate();
 
